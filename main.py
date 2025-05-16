@@ -40,4 +40,19 @@ with open("input.txt", "r") as file:
 
     print(total_distance)
 
-    
+    SimilarityScores = []
+
+    for item1 in sortedArray_1:
+        SimilarityMultiple = 0
+        for item2 in sortedArray_2:
+            if (int(item1) == int(item2)):
+                SimilarityMultiple += 1
+
+        IndividualSimScore = int(item1) * SimilarityMultiple
+        SimilarityScores.append(IndividualSimScore)
+
+    TotalScore = 0
+    for score in SimilarityScores:
+        TotalScore += score
+
+    print(TotalScore)
